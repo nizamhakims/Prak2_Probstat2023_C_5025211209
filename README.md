@@ -43,9 +43,24 @@ Karena p-value `0.0001373` lebih kecil dibandingkan tingkat signifikansi 𝛼 `0
 ## No 2
 Diketahui bahwa mobil dikemudikan rata-rata lebih dari 25.000 kilometer per tahun. Untuk menguji klaim ini, 100 pemilik mobil yang dipilih secara acak diminta untuk mencatat jarak yang mereka tempuh. Jika sampel acak menunjukkan rata-rata 23.500 kilometer dan standar deviasi 3.000 kilometer (kerjakan menggunakan library seperti referensi pada modul).
 
+### 2a.
+Menggunakan zsum()
 ```
+zsum.test(mean.x=23500, sigma.x = 3000, n.x = 100, 
+          alternative = "greater", mu = 25000, 
+          conf.level = 0.95)
+```
+Didapatkan hasil:
 
-```
+![zsum](Dokumentasi_prak_2/zsum.png)
+
+- H0 : μ ≥ 25000
+- H1 : μ < 25000
+
+Saya setuju dengan klaim pada soal karena dari perhitungan zsum() diatas didapatkan p-value = 1 dimana `p-value = 1 > α = 0,5` , artinya tidak cukup bukti untuk menolak H0 yaitu bahwa mobil dikemudikan rata-rata lebih dari 25.000 kilometer per tahun
+
+### 2b.
+Karena tidak cukup bukti untuk menolak H0 maka
 
 ## No 3
 Diketahui perusahaan memiliki seorang data analyst yang ingin memecahkan permasalahan pengambilan keputusan dalam perusahaan tersebut. Selanjutnya didapatkanlah data berikut dari perusahaan saham tersebut
@@ -111,4 +126,26 @@ Didapatkan hasil
 ![GTL](Dokumentasi_prak_2/GTL.png)
 
 ### 4b. Lakukan uji ANOVA dua arah
+Menggunakan fungsi aov() untuk menghitung anova dan summary() untuk menampilkan hasilnya
+```
+GTL$Glass <- as.factor(GTL$Glass)
+GTL$Temp <- as.factor(GTL$Temp)
+
+anova <- aov(Light ~ Glass*Temp, data = GTL)
+summary(anova)
+```
+Didapatkan hasil:
+
+![anova](Dokumentasi_prak_2/gtlAnova.png)
+
 ### 4c. Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
+Group by Glass, Temp untuk kombinasi perlakuan kaca pelat muka dan suhu operasi. Kemudian gunakan fungsi summarise()
+```
+summary <- group_by(GTL, Glass, Temp) %>%
+    summarise(mean=mean(Light), sd=sd(Light)) %>%
+    arrange(desc(mean))
+summary
+```
+Didapatkan hasil:
+
+![table](Dokumentasi_prak_2/table.png)
