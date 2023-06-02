@@ -89,7 +89,26 @@ Didapatkan hasil 5.991465
 ![kritikal](Dokumentasi_prak_2/nilaiKritikal.png)
 
 ### 3e. Keputusan
+Karena p-value pada poin 3b = 0.03691 dan α = 0.05 maka 0.03691 < 0.05. Sehingga H0 ditolak dan H1 diterima
 
 ### 3f. Kesimpulan
+Karena H1 diterima, artinya ada perbedaan antara mean saham bandung dengan mean saham bali `µ1 ≠ µ2`
 
 ## No 4
+Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui pengaruh suhu operasi (100˚C, 125˚C dan 150˚C) dan tiga jenis kaca pelat muka (A, B dan C) pada keluaran cahaya tabung osiloskop. Percobaan dilakukan sebanyak 27 kali dan didapat data sebagai berikut:
+
+![GTLdata](Dokumentasi_prak_2/GTLdata.png)
+
+Download dan import data ke dalam R Studio
+
+### 4a. Buatlah plot sederhana untuk visualisasi data
+Menggunakan qplot
+```
+qplot(x = Temp, y = Light, geom = "auto", data = GTL) + facet_grid(.~Glass, labeller = label_both)
+```
+Didapatkan hasil
+
+![GTL](Dokumentasi_prak_2/GTL.png)
+
+### 4b. Lakukan uji ANOVA dua arah
+### 4c. Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
