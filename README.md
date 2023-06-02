@@ -43,7 +43,7 @@ Karena p-value `0.0001373` lebih kecil dibandingkan tingkat signifikansi 𝛼 `0
 ## No 2
 Diketahui bahwa mobil dikemudikan rata-rata lebih dari 25.000 kilometer per tahun. Untuk menguji klaim ini, 100 pemilik mobil yang dipilih secara acak diminta untuk mencatat jarak yang mereka tempuh. Jika sampel acak menunjukkan rata-rata 23.500 kilometer dan standar deviasi 3.000 kilometer (kerjakan menggunakan library seperti referensi pada modul).
 
-### 2a.
+### 2a. Apakah Anda setuju dengan klaim tersebut? Jelaskan.
 Menggunakan zsum()
 ```
 zsum.test(mean.x=23500, sigma.x = 3000, n.x = 100, 
@@ -59,7 +59,7 @@ Didapatkan hasil:
 
 Saya setuju dengan klaim pada soal karena dari perhitungan zsum() diatas didapatkan p-value = 1 dimana `p-value = 1 > α = 0,5` , artinya tidak cukup bukti untuk menolak H0 yaitu bahwa mobil dikemudikan rata-rata lebih dari 25.000 kilometer per tahun
 
-### 2b.
+### 2b. Buatlah kesimpulan berdasarkan p-value yang dihasilkan!
 Karena tidak cukup bukti untuk menolak H0 maka diambil kesimpulan bahwa mobil dikemudikan rata-rata lebih dari 25.000 kilometer per tahun
 
 ## No 3
