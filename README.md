@@ -60,7 +60,7 @@ Didapatkan hasil:
 Saya setuju dengan klaim pada soal karena dari perhitungan zsum() diatas didapatkan p-value = 1 dimana `p-value = 1 > α = 0,5` , artinya tidak cukup bukti untuk menolak H0 yaitu bahwa mobil dikemudikan rata-rata lebih dari 25.000 kilometer per tahun
 
 ### 2b.
-Karena tidak cukup bukti untuk menolak H0 maka
+Karena tidak cukup bukti untuk menolak H0 maka diambil kesimpulan bahwa mobil dikemudikan rata-rata lebih dari 25.000 kilometer per tahun
 
 ## No 3
 Diketahui perusahaan memiliki seorang data analyst yang ingin memecahkan permasalahan pengambilan keputusan dalam perusahaan tersebut. Selanjutnya didapatkanlah data berikut dari perusahaan saham tersebut
